@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us Page</title>
+</head>
+  <body>
+    <div id="content">
+      <!-- Sidebar (Only show if user is logged in) -->
+      <!-- <div th:if="${loggedInUser}">
+        <div th:replace="~{user/sidebar :: sidebar}"></div>
+      </div> -->
+
+      
+    <!-- Main Content -->
+    <div class="min-h-screen flex flex-col items-center justify-center px-4">
+        <div class="container mx-auto">
+          <!-- Page Title -->
+          <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold dark:text-white">About Us</h1>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mt-4">
+              Learn more about Smart Contact Manager and how we help you organize your contacts efficiently.
+            </p>
+          </div>
+  
+          <!-- About Content -->
+          <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-2xl">
+            <h2 class="text-3xl font-semibold mb-4 dark:text-white">Our Mission</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              Smart Contact Manager is designed to simplify how you manage your professional and personal contacts. Our mission is to provide users with an intuitive, easy-to-use platform that helps you store, organize, and access contacts seamlessly.
+            </p>
+            
+            <h2 class="text-3xl font-semibold mb-4 dark:text-white">Why Choose Us?</h2>
+            <ul class="list-disc ml-5 text-lg text-gray-700 dark:text-gray-300 mb-4">
+              <li>Easy-to-use contact management interface</li>
+              <li>Secure storage for your important contact information</li>
+              <li>Access contacts from anywhere, anytime</li>
+              <li>Integration with various platforms for seamless connectivity</li>
+            </ul>
+            
+            <!-- <h2 class="text-3xl font-semibold mb-4 dark:text-white">Our Team</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              We are a group of dedicated professionals passionate about simplifying contact management. Our team continuously strives to improve the user experience and provide top-notch support to our clients.
+            </p> -->
+  
+            <h2 class="text-3xl font-semibold mb-4 dark:text-white">Get in Touch</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300">
+              Have questions? Feel free to <a href="/contact" class="text-blue-500 hover:underline">contact us</a> anytime. We're here to help you get the most out of Smart Contact Manager.
+            </p>
+          </div>
+        </div>
+      </div>
+    <script>
+      console.log("This is the about page");
+    </script>
+  </body>
+</html>

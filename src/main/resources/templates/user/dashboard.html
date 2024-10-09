@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+  <head>
+    <title data-th-text="${loggedInUser.name} + ' | Dashboard'">
+      Dashboard
+    </title>
+    <link rel="stylesheet" href="path/to/tailwind.css" />
+  </head>
+  <body>
+    <div id="content">
+      <!-- Sidebar -->
+      <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="sm:pl-64 pt-20" style="height: 1000px">
+        <div class="container mx-auto px-4">
+          <!-- Welcome Section -->
+          <div class="flex justify-center flex-col items-center">
+            <h1 class="text-5xl font-bold mb-4" data-th-text="'Welcome, ' + ${loggedInUser.name}">Welcome to Dashboard</h1>
+            <p>
+              Manage your contacts, view statistics, and track your activities.
+            </p>
+          </div>
+
+          <!-- Statistics Section -->
+          <div class="flex justify-between mt-12">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+              <h2 class="text-xl font-semibold">Total Contacts</h2>
+              <p class="text-3xl mt-2" data-th-text="${totalContacts}">0</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+              <h2 class="text-xl font-semibold">Active Users</h2>
+              <p class="text-3xl mt-2" data-th-text="${activeUsers}">0</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
+              <h2 class="text-xl font-semibold">New Messages</h2>
+              <p class="text-3xl mt-2" data-th-text="${newMessages}">0</p>
+            </div>
+          </div>
+
+          <!-- Recent Activity Section -->
+          <div class="mt-12">
+            <h3 class="text-2xl font-semibold mb-4">Recent Activities</h3>
+            <ul class="list-disc list-inside">
+              <li th:each="activity : ${recentActivities}" data-th-text="${activity}">
+                Sample activity goes here...
+              </li>
+            </ul>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      console.log("This is the dashboard page");
+    </script>
+  </body>
+</html>
